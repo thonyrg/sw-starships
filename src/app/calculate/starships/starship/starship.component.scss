@@ -1,0 +1,18 @@
+@import '../../../../sass/colours';
+
+.card {
+    border-color: $sw-gold;
+}
+
+.card-header {
+    background-color: $sw-gold;
+    color: $sw-black;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.sw-card {
+    &__body {
+        background-color: $sw-black;
+    }
+}

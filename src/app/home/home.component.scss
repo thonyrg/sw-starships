@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+
+.sw-home {
+    &__title {
+        font-size: 1rem;
+        text-decoration: underline;
+        @include media-breakpoint-up(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__content {
+        list-style-type: none;
+        font-size: 0.75rem;
+        padding: 0;
+        
+        @include media-breakpoint-up(md) {
+            font-size: 1rem;
+        }
+    }
+}

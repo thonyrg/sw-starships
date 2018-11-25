@@ -1,0 +1,142 @@
+<div class="col-12">
+    <section>
+        <h3 class="text-center">Tech Specs</h3>
+        <div>This application has been developed using in Angular 7, Twitter's Bootstrap 4 for RWD (Responsive web design) using mobile first approach and Karma/Jasmine for unit testing</div>
+        <h4 class="text-center">How to run it locally</h4>
+        <div>
+            <ol class="pl-4">
+                <li>Install Angular-cli globally on your computer using <code class="inline">npm install -g @angular/cli</code> (you may need <code class="inline">sudo</code> permissions if you're on Mac or Linux</li>
+                <li>Clone the git repo at: <code class="inline">https://github.com/thonyrg/sw-starships.git</code></li>
+                <li>Go to the application folder and run <code class="inline">npm install</code> to install dependencies</li>
+                <li>Use the command <code class="inline">ng serve -o</code> to run and to open the application automatically</li>
+                <li>To run unit tests, use the command <code class="inline">ng test</code></li>
+            </ol>
+        </div>
+        <h4 class="text-center">This application consists in the following parts</h4>
+        <h5 class="text-center">Components</h5>
+        <div>
+            <ul class="pl-4">
+                <li>
+                    <div>Header Component (/src/shared/components/header/ folder)</div>
+                    <ul>
+                        <li>Component created to show the application header</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Menu Component (/src/shared/components/menu/ folder)</div>
+                    <ul>
+                        <li>Component created to show the application menu</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Home Component (/src/home/ folder)</div>
+                    <ul>
+                        <li>Component created to be the landing page where there are instructions on how to use the application</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Calculate Component (/src/calculate/ folder)</div>
+                    <ul>
+                        <li>Component created to show the starships form and results</li>
+                        <li>This component receives the results from the Starship Form component and send them to Starships component</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Starships Form Component (/src/calculate/starships-form folder)</div>
+                    <ul>
+                        <li>Component created to show the starships form where the user can choose one or all starships and type in the distance wanted to be calculated</li>
+                        <li>Once the calculation is done, this component is responsible for emitting the results to the Calculate component</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Starships Component (/src/calculate/starships folder)</div>
+                    <ul>
+                        <li>Component created to show the list of starships as a result of the distance calculation</li>
+                        <li>This component receives the results from the Calculate component and send each item to the Starship component</li>
+                        <li>It renders a list of Starship components</li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Starship Component (/src/calculate/starships/starship folder)</div>
+                    <ul>
+                        <li>Component created to show a card containing starship information</li>
+                        <li>This component receives a starship information from the Starships component</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h5 class="text-center">Services</h5>
+        <div>This application has only one service (/src/app/shared/services/sw-starships.service.ts) with the following methods:</div>
+        <div>
+            <ul class="pl-4">
+                <li>getStarships
+                    <ul>
+                        <li>Parameters:
+                            <ul>
+                                <li>specificEndpoint: string with default value of '' (empty string)</li>
+                                <li>If a specific endpoint is not provided, it uses the starships endpoint to fetch the initial data</li>
+                            </ul>
+                        </li>
+                        <li>Responsible for doing the HTTP request to fetch the list of starships from the swapi (https://swapi.co/starships/)</li>
+                        <li>This method returns an observable</li>
+                    </ul>
+                </li>
+                <li>getHoursFromPeriod
+                    <ul>
+                        <li>Parameters:
+                            <ul>
+                                <li>period: string with default value of '' (empty string)</li>
+                                <li>If a specific endpoint is not provided, it uses the starships endpoint to fetch the initial data</li>
+                            </ul>
+                        </li>
+                        <li>Responsible for converting periods of time (e.g: 2 years or 4 weeks) in hours</li>
+                        <li>This method returns a number</li>
+                    </ul>
+                </li>
+                <li>getNumberOfStopsForResupply
+                    <ul>
+                        <li>Parameters:
+                            <ul>
+                                <li>distance: number</li>
+                                <li>consumablesInHours: number</li>
+                                <li>mglt: string as the mega light value may be 'unknown'</li>
+                                <li>All parameters are required</li>
+                            </ul>
+                        </li>
+                        <li>Responsible returning the number of stops for resupply a starship will need</li>
+                        <li>This method returns a string</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h5 class="text-center">Models</h5>
+        <div>This application has only one model/interface (/src/app/shared/models/IStarships.ts) with the following structure:</div>
+        <div class="mt-2">
+            <pre>
+                <code>
+    &#123;
+        name: string;
+        model: string;
+        manufacturer: string;
+        cost_in_credits: string;
+        length: string;
+        max_atmosphering_speed: string;
+        crew: string;
+        passengers: string;
+        cargo_capacity: string;
+        consumables: string;
+        hyperdrive_rating: string;
+        MGLT: string;
+        starship_class: string;
+        pilots: Array&lt;string&gt;;
+        films: Array&lt;string&gt;;
+        created: string;
+        edited: string;
+        url: string;
+        stopsForResupply?: string;
+    &#125;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import '../../../sass/colours';
+
+.sw-starships {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        text-align: right;
+    }
+
+    &__button {
+        background-color: $sw-gold;
+        height: 30px;
+        border: 1px solid $sw-gold;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &--inactive {
+            border: 2px solid $sw-gold;
+            background-color: $sw-black;
+            color: $sw-gold;
+        }
+
+        @include media-breakpoint-up(md) {
+            height: calc(2.25rem + 2px);
+        }
+    }
+}
+
+pre {
+    border: 1px solid $sw-gold;
+    border-radius: 5px;
+    background-color: $sw-black;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: $sw-gold;
+    font-size: 0.75rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+}

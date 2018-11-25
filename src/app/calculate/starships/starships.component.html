@@ -1,0 +1,18 @@
+<div *ngIf="starshipsList.length > 0">
+    <div class="mb-3 sw-starships">
+        <button
+            class="sw-starships__button"
+            [ngClass]="{'sw-starships__button--inactive': currentView !== 'card'}"
+            (click)="currentView = 'card'">Card view</button>
+            <button
+            class="sw-starships__button ml-3"
+            [ngClass]="{'sw-starships__button--inactive': currentView !== 'collection'}"
+            (click)="currentView = 'collection'">Collection view</button>
+    </div>
+    <div *ngIf="currentView === 'card'">
+        <sw-starship [starshipData]="starship" *ngFor="let starship of starshipsList"></sw-starship>
+    </div>
+    <div class="mb-3" *ngIf="currentView === 'collection'">
+        <pre><code>{{ starshipsList | json }}</code></pre>
+    </div>
+</div>

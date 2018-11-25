@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import './colours';
+
+body {
+    background-color: $sw-black;
+    color: $sw-gold;
+    font-size: 0.875rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+}
+
+a, a:link, a:visit, a:hover, a:active {
+    color: $sw-gold !important;
+}

@@ -1,0 +1,30 @@
+<div class="text-center" *ngIf="loading">
+    <img class="sw-form__loading-icon" src="../../../assets/loading.gif">
+</div>
+<form [formGroup]="swForm" (ngSubmit)="showResults()">
+    <div class="form-row sw-form mb-3" *ngIf="!loading">
+        <div class="col-5">
+            <select class="custom-select sw-form__select" formControlName="starship">
+                <option value="" selected>All Starships</option>
+                <option *ngFor="let starship of starshipsArray; let i = index" [value]="i">{{ starship.name }}</option>
+            </select>
+        </div>
+        <div class="col-5">
+            <label for="distance" class="sr-only">Distance</label>
+            <input
+                type="text"
+                class="form-control sw-form__input"
+                [ngClass]="{'sw-form__input-invalid': (swForm.touched && swForm.invalid)}"
+                (focus)='markFormAsTouched()'
+                formControlName="distance"
+                id="distance"
+                placeholder="Distance"
+                value=""
+                required>
+            <div *ngIf="swForm.touched && swForm.invalid">* Only numbers allowed</div>
+        </div>
+        <div class="col-2 button">
+            <button class="sw-form__button" type="submit">GO</button>
+        </div>
+    </div>
+</form>

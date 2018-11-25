@@ -1,0 +1,52 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import '../../../sass/colours';
+
+.sw-form {
+    font-size: 0.75rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+
+    &__loading-icon {
+        width: 50px;
+
+        @include media-breakpoint-up(md) {
+            width: 100px;
+        }
+    }
+    
+    &__select {
+        height: 30px;
+
+        @include media-breakpoint-up(md) {
+            height: calc(2.25rem + 2px);
+        }
+    }
+    
+    &__input {
+        height: 30px;
+
+        @include media-breakpoint-up(md) {
+            height: calc(2.25rem + 2px);
+        }
+
+        &-invalid {
+            border: 2px solid #ff0000;
+        }
+    }
+    
+    &__button {
+        width: 100%;
+        background-color: $sw-gold;
+        height: 30px;
+        border: 1px solid $sw-gold;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        @include media-breakpoint-up(md) {
+            height: calc(2.25rem + 2px);
+        }
+    }
+}
